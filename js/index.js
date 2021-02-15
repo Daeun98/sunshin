@@ -14,6 +14,12 @@ $(".article1 .slide_group").slick({
     arrows: true, // 좌우화살표 사용여부(생략가능)
     prevArrow: '<button class="prev"><i class="fas fa-angle-left"></i></button>',
     nextArrow: '<button class="next"><i class="fas fa-angle-right"></i></button>', 
+    responsive:[{
+        breakpoint:1024,
+        settings:{
+            arrows: false,
+        }
+    }]
 })
 
 // .hasClass : 클래스 유무 판단(결과는 true 또는 false)
@@ -60,6 +66,9 @@ $('#header .open').on('click', function(){
 
 var ww = $(window).width();
 console.log(ww)
+
+// var elDepth1Li = document.querySelectorAll('.nav .depth1 > li')
+// console.log(elDepth1Li.length)
 if(ww>1024) {
     $('.nav .depth1 > li').hover(
         function(){
@@ -69,6 +78,15 @@ if(ww>1024) {
             $(this).removeClass('on')
         }
     )
+    // for (var i=0; i<elDepth1Li.length; i++) {
+    //     elDepth1Li[i].addEventListener('mouseover', function(){
+    //         this.classList.add('on')
+    //     })
+    //     elDepth1Li[i].addEventListener('mouseout', function(){
+    //         this.classList.remove('on')
+    //     })
+    // }
+
 } else {
     $('.nav .depth1 > li').on('click', function(){
         // $(this).toggleClass('on')
@@ -79,4 +97,19 @@ if(ww>1024) {
         }
         $(this).siblings().removeClass('on')
     })
+    // for (var i=0; i<elDepth1Li.length; i++) {
+    //     elDepth1Li[i].addEventListener('click', function(){
+    //         for (var j=0; j<elDepth1Li.length; j++) {
+    //             if (i !== j) {
+    //                 elDepth1Li[j].classList.remove('on')
+    //             }
+    //         }
+    //         if (!this.classList.contains('on')) {
+    //             this.classList.add('on')
+    //         } else {
+    //             this.classList.remove('on')
+    //         }
+    //     })
+    // }
+
 }

@@ -5,6 +5,11 @@ body {color: #555;}
 /* button {outline:none;} */
 
 /* header */
+#header {transition:all 0.5s;}
+#header.on {
+    position:fixed; width:100%; top:0; left:0;
+    z-index:999999; background:#fff;
+}
 #header > div {max-width:1200px; margin:0 auto; position:relative;}
 #header h1 {padding:20px 0; margin-left:70px;}
 /*블록요소들을 한줄로 정렬할떄 float 정렬 대신 position:absolte를
@@ -123,8 +128,8 @@ body {color: #555;}
 }
 .article1 .slide_group .slide .txt {
     position:absolute;
-    top:50%; left:50%;
-    transform:translate(-50%,-50%);
+    top:50%; left:0%; right:0%;
+    transform:translateY(-50%);
     text-align:center;
     color:#fff;
 }
@@ -253,10 +258,41 @@ body {color: #555;}
 .article3 .imgbox:hover .sbox {
     opacity:1; 
 }
+.article3 .imgbox .sbox p:nth-child(1)
+ {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+ }
+ .article3 .imgbox .sbox p:nth-child(2)
+{
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 15px;
+    padding-bottom: 18px;
+}
 .article3 .imgbox img {transition:all 0.4s;}
 .article3 .imgbox:hover img {
     transform:scale(1.2);
 }
+.article3 .txtbox 
+{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    background:#397dda;
+    padding:15px 28px;
+}
+.article3 .txtbox p:nth-child(2)
+{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    background:#397dda;
+    padding-top:20px;
+}
+.article4 { padding-top:61px;  }
+.article4 .map { height:270px; margin-top:20px }
 
 
 
